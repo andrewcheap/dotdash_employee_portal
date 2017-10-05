@@ -1,0 +1,17 @@
+<form layout-align="center center" layout="column" ng-submit="login.authenticateUser(login.userData)" ng-cloak>
+	<md-content layout="column">
+		<md-input-container>
+			<label>Username</label>
+			<input type="text" placeholder="" size="30" name="username" ng-model="login.userData.username">
+		</md-input-container>
+		<md-input-container>
+			<label>Password</label>
+			<input type="password" placeholder="" size="30" name="password" ng-model="login.userData.password">
+		</md-input-container>
+        <div ng-show="login.showError" class="error" ng-message="required">Could not authenticate user.</div>
+		<div>
+			<md-button type="submit">Submit</md-button>
+			<!-- <a href="/register"><md-button type="submit">Register</md-button></a> -->
+		</div>
+		</md-content>
+</form>

@@ -1,0 +1,7 @@
+file-upload p {
+    font-size: 12px;
+}
+
+file-upload p.error {
+    color: rgb(221,44,0);
+}

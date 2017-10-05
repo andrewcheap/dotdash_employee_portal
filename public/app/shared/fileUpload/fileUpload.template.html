@@ -1,0 +1,16 @@
+<ng-form name="uploadForm">
+  <md-button class="md-raised md-primary" 
+  	ngf-select="upload.upload($file)" 
+  	ng-model="file" 
+  	name="file" 
+  	ngf-pattern="'image/*'"
+    ngf-accept="'image/*'" 
+		ngf-max-size="20MB"
+		ngf-min-height="upload.height"
+		ngf-max-height="upload.height"
+		ngf-min-width="upload.width"
+		ngf-max-width="upload.width">
+    	Upload Image
+		</md-button>
+		<p ng-class="{error: uploadForm.$error.minWidth || uploadForm.$error.maxWidth || uploadForm.$error.minHeight || uploadForm.$error.maxHeight}">Image must be {{upload.width}}x{{upload.height}} (WxH)</p>
+</ng-form>

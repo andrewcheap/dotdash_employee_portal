@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dot Dash Portal</title>
+	<base href="/">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="dist/css/appStyles.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+	<body ng-controller="MainController as main">
+		<md-toolbar ng-if="main.loggedIn" ng-cloak>
+			<div class="md-toolbar-tools">
+				<a href="/dashboard">
+					<md-button aria-label="Dot Dash Portal">
+						 Dot Dash Project Portal
+					</md-button>
+				</a>
+				<a href="/project" >
+					<md-button title="Add Project" class="md-fab md-mini add-project" aria-label="Add Campaign">
+						<i class="material-icons">add</i>
+					</md-button>
+				</a>
+				<span flex></span>
+					<span class="md-subhead">Hello, {{main.userData.username}}</span>
+				<md-button class="md-raised" ng-click="main.logout()" aria-label="Logout">
+					Logout
+				</md-button>
+			</div>
+		</md-toolbar>
+	<div layout-margin ui-view></div>
+	<script type="text/javascript" src="dist/js/all.js"></script>
+	</body>
+</html>
+

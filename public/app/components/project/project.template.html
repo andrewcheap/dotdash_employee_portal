@@ -1,0 +1,81 @@
+<div id="wrapper">
+  <div layout="column" ng-cloak>
+    <md-content layout-padding>
+      <form name="projectForm">
+        <md-input-container class="md-block">
+          <div layout="row" layout-align="center">
+            <md-input-container flex="30">
+              <label>Project Name</label>
+              <input required name="projectName" ng-model="proj.project.name">
+              <div ng-messages="projectForm.projectName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout="row" layout-align="center">
+            <md-input-container flex="30">
+              <label>City</label>
+              <input required name="projectCity" ng-model="proj.project.city">
+              <div ng-messages="projectForm.projectCity.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout="row" layout-align="center">
+            <md-input-container flex="30">
+              <md-checkbox ng-model="proj.project.comingSoon" aria-label="Coming soon?">
+                Coming Soon?
+              </md-checkbox>
+            </md-input-container>
+          </div>
+          <div layout="row" layout-align="center">
+              <md-input-container flex="30">
+                <div
+                    md-color-picker="proj.colorPickerOptions"
+                    ng-model="proj.project.color">
+                </div>
+              <input type="hidden" name="projectColor" ng-model="proj.project.color" required>
+            </md-input-container>
+          </div>
+          <div layout="row" layout-align="center">
+            <md-input-container flex="30">
+              <dash-picker project="proj.project"></dash-picker>
+              <input type="hidden" name="projectColor" ng-model="proj.project.position" required>
+            </md-input-container>
+          </div>
+          <br><br>
+          <div layout="row" layout-align="center">
+            <md-input-container>
+              <file-upload project="proj.project" height="342" width="proj.imageWidth"></file-upload>
+            </md-input-container>
+            <div class="img-container" ng-repeat="img in proj.project.images">
+              <img class="img-thumb" ng-src="{{img}}">
+              <a class="trash" ng-click="proj.deleteImage(img)" href="#"><i class="material-icons">delete_forever</i></a>
+            </div>
+          </div>
+          <br><br>
+          <div layout="row" layout-align="center" ng-repeat="detail in proj.project.details">
+            <div layout="row">
+              <md-input-container flex="50">
+                <label>Detail Field Name</label>
+                <input name="detailFieldName" ng-model="detail.fieldName">
+              </md-input-container>
+              <md-input-container flex="50">
+                <label>Detail Content</label>
+                <input name="detailContent" ng-model="detail.fieldContent">
+              </md-input-container>
+            </div>
+            <div class="detail-buttons">
+              <a href="#" ng-click="proj.addDetail()" ng-if="$last"><i class="material-icons">add_circle_outline</i></a>
+              <a href="#" ng-if="!$first" ng-click="proj.deleteDetail($index)"><i class="material-icons">remove_circle_outline</i></a>
+            </div>  
+          </div>
+          <div layout="row" layout-align="center">
+            <md-button ng-if="!proj.project.id" ng-disabled="projectForm.$invalid" ng-click="proj.addProject()">Submit</md-button>
+            <md-button ng-if="proj.project.id" ng-disabled="projectForm.$invalid" ng-click="proj.addProject()">Update</md-button>
+            <md-button ng-hide="proj.newProject" ng-click="proj.deleteProject()">Delete</md-button>
+          </div>
+      </form>
+    </md-content>
+  </div>
+</div>

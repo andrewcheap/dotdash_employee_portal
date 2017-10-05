@@ -1,0 +1,21 @@
+project .img-thumb {
+	max-height: 100px;
+	float: left;
+	margin-right: 20px;
+}
+
+project a.trash {
+	position: relative;
+	left: -44px;
+	color: red;
+}
+
+project .detail-buttons {
+	height: 94px;
+	width: 60px
+}
+
+project .detail-buttons {
+	position: relative;
+	top: 18px;
+}

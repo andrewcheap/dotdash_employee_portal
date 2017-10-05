@@ -1,0 +1,33 @@
+dash-picker div.button-holder-outer {
+	display: block;
+	width: 228px;
+	height: 228px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: auto;
+}
+
+dash-picker div.button-holder {
+	display: block;
+	width: 240px;
+	height: 228px;
+	position: relative;
+	top: -2px;
+	left: -6px;
+}
+
+dash-picker div.dash-button {
+	width: 12px;
+	height: 4px;
+	margin: 2px;
+	float: right;
+	background-color: gray;
+	cursor: pointer;
+}
+
+dash-picker p {
+    padding-top: 30px;
+    width: 200px;
+    color: rgba(0,0,0,0.38);
+    margin: 0 auto 20px;
+}

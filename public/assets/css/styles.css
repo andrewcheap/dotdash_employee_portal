@@ -1,0 +1,21 @@
+/*Fix for Angular-Material Bug*/
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+color: inherit;
+}
+
+.md-color-picker-dialog {
+	max-height: 450px !important;
+}
+
+#wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.add-project i {
+	line-height: 40px;
+}
+
+md-toolbar {
+	background: black !important;
+}

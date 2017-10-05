@@ -1,0 +1,8 @@
+<p>
+	Select a button location*
+</p>
+<div class="button-holder-outer">
+	<div class="button-holder">
+		<div ng-click="dashPicker.setDashPosition($index)" ng-style="dashPicker.setDashColor($index)" ng-repeat="i in dashPicker.getNumber(435) track by $index" class="dash-button"></div>
+	</div>
+</div>
